@@ -68,6 +68,17 @@ Removing hardcoded values from source code by reading configuration from an exte
 
 ---
 
+### ✅ Lesson 07 — Mini Project: Order Management System
+> `@Profile` · `@Conditional` · `@Import` · `@Value` · `@PostConstruct` · `@PreDestroy`
+
+A complete mini project combining all Spring Core concepts into a realistic order processing system.
+
+- `DatabaseService` with `@PostConstruct` (init connection) and `@PreDestroy` (close connection)
+- `PaymentService` interface with `DevPaymentService` (`@Profile("dev")`) and `ProdPaymentService` (`@Profile("prod")`)
+- `DiscountService` created conditionally via custom `DiscountCondition` implementing `Condition`
+- `OrderService` orchestrates the full order flow: save → payment → discount → email confirmation
+- Config split into `DatabaseConfig`, `NotificationConfig`, `PaymentConfig`, `DiscountConfig` — merged via `@Import` in `AppConfig`
+
 ## 🛠️ Tech Stack
 
 | Tool | Version |
@@ -91,6 +102,7 @@ src/
     │   ├── lesson04_scope/
     │   ├── lesson05_import/
     │   └── lesson06_value/
+    │   └── lesson07_mini_project/
     └── resources/
         └── application.properties        ← excluded from Git
 ```
@@ -113,7 +125,7 @@ src/
 - [x] Spring Context — `@Component`, `@Autowired`, `@ComponentScan`
 - [x] Servlet + Tomcat (traditional)
 - [x] Spring MVC (pure — `DispatcherServlet`, `HandlerMapping`, `ViewResolver`)
-- [x] Bean Lifecycle, `@Configuration`, `@Bean`, `@Scope`, `@Import`, `@Value`
+- [x] Bean Lifecycle, `@Configuration`, `@Bean`, `@Scope`, `@Import`, `@Value`, `@Profile`, `@Conditional`
 - [ ] Spring MVC — additional practice project
 - [ ] Spring Boot
 - [ ] Spring Data JPA + REST API
