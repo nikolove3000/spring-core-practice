@@ -79,6 +79,18 @@ A complete mini project combining all Spring Core concepts into a realistic orde
 - `OrderService` orchestrates the full order flow: save → payment → discount → email confirmation
 - Config split into `DatabaseConfig`, `NotificationConfig`, `PaymentConfig`, `DiscountConfig` — merged via `@Import` in `AppConfig`
 
+
+---
+
+
+### ✅ Lesson 08 — AOP (Aspect-Oriented Programming)
+> `@Aspect` · `@Before` · `@After` · `@Around` · `@EnableAspectJAutoProxy`
+
+Understanding how to separate cross-cutting concerns from business logic using AOP.
+
+- `LoggingAspect` logs method start and end for all service methods via `@Before` and `@After`
+- `@Around` with `ProceedingJoinPoint` measures execution time of each method
+- `OrderService` remains clean — no logging code inside business logic
 ## 🛠️ Tech Stack
 
 | Tool | Version |
@@ -103,6 +115,7 @@ src/
     │   ├── lesson05_import/
     │   └── lesson06_value/
     │   └── lesson07_mini_project/
+    │   └── lesson08_aop/    
     └── resources/
         └── application.properties        ← excluded from Git
 ```
