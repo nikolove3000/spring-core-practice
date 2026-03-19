@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.lesson01_lifecycle;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
